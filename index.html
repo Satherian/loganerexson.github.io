@@ -2,26 +2,50 @@
 <html lang="en-US">
     <head>
         <title>DnD Tools</title>
+        <script src="js/index.js"></script>
+        <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
         <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-            <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+            <button class="tablinks" onclick="openTab(event, 'money')">Money</button>
+            <button class="tablinks" onclick="openTab(event, 'str')">Strength</button>
+            <button class="tablinks" onclick="openTab(event, 'con')">Constitution</button>
+            <button class="tablinks" onclick="openTab(event, 'travel')">Travel</button>
+   </div>
+
+        <div id="money" class="tabcontent">
+            <h3>Money</h3>
+            <div id="money_fields" float="inline">
+                CP <input type="text" name="cp"><br>
+                SP <input type="text" name="sp"><br>
+                EP <input type="text" name="ep"><br>
+                GP <input type="text" name="gp"><br>
+                PP <input type="text" name="pp"><br>
+            </div>
+            <div id="money_buttons" float="inline">
+            
+            </div>
+            <div id="money_values" float="inline"></div>
         </div>
 
-        <div id="London" class="tabcontent">
-            <h3>London</h3>
-            <p>London is the capital city of England.</p>
+        <div id="str" class="tabcontent">
+            <h3>Strength</h3>
+            <div id="strForm">
+                Strength Score: <input type="text" id="strScore"><br>
+                Powerful Build: <input type="checkbox" id="powBuild">
+                Small: <input type="checkbox" id="isSmall"><br>
+                <input type="submit" onclick="calculateStr()" value="Calculate">
+            </div>
+            <div id="strResults"></div>
         </div>
 
-        <div id="Paris" class="tabcontent">
-            <h3>Paris</h3>
-            <p>Paris is the capital of France.</p> 
+        <div id="con" class="tabcontent">
+            <h3>Constitution</h3>
+            <p>Tokyo is the capital of Japan.</p>
         </div>
 
-        <div id="Tokyo" class="tabcontent">
-            <h3>Tokyo</h3>
+        <div id="travel" class="tabcontent">
+            <h3>Travel</h3>
             <p>Tokyo is the capital of Japan.</p>
         </div>
     </body>
