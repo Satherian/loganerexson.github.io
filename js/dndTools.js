@@ -81,3 +81,24 @@ function calculateTravel(){
     var travelResults = document.getElementById("travelResults");
     travelResults.innerHTML = resultString;
 }
+
+function addCoins(){
+    var coinInput = document.getElementById("coinInput");
+    var coinSelect = document.getElementById("coinSelect");
+    var coins = parseInt(coinInput.value);
+    var coinType = coinSelect.value;
+
+    var current = document.getElementById(coinType);
+    current.textContent = coins + parseInt(current.textContent);
+}
+
+function subCoins(){
+    var coinInput = document.getElementById("coinInput");
+    var coinSelect = document.getElementById("coinSelect");
+    var coins = parseInt(coinInput.value);
+    var coinType = coinSelect.value;
+
+    var current = document.getElementById(coinType);
+    var currentOfType =  parseInt(current.textContent);
+    current.textContent =currentOfType-coins;
+}

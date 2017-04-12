@@ -11,26 +11,62 @@
             <button class="tablinks" onclick="openTab(event, 'str')">Strength</button>
             <button class="tablinks" onclick="openTab(event, 'con')">Constitution</button>
             <button class="tablinks" onclick="openTab(event, 'travel')">Travel</button>
-   </div>
+        </div>
         <div id="money" class="tabcontent">
             <h3>Money</h3>
-            <div id="money_fields" float="inline">
-                CP <input type="text" name="cp"><br>
-                SP <input type="text" name="sp"><br>
-                EP <input type="text" name="ep"><br>
-                GP <input type="text" name="gp"><br>
-                PP <input type="text" name="pp"><br>
+            <table>
+                <tr>
+                    <th>Copper</th>
+                    <th>Silver</th>
+                    <th>Electrum</th>
+                    <th>Gold</th>
+                    <th>Platinum</th>
+                </tr>
+                <tr>
+                    <td id="cp">0</td>
+                    <td id="sp">0</td>
+                    <td id="ep">0</td>
+                    <td id="gp">0</td>
+                    <td id="pp">0</td>
+                </tr>
+            </table>
+            <br>
+            <div id="moneyActions">
+                Amount: <input type="number" value="0" id="coinInput"> 
+                <select id="coinSelect">
+                    <option value="cp">CP</option>
+                    <option value="sp">SP</option>
+                    <option value="ep">EP</option>
+                    <option value="gp">GP</option>
+                    <option value="pp">PP</option>
+                </select>
+                <br>
+                <button type="button" id="addCoin" onclick="addCoins()">Add</button>
+                <button type="button" id="subCoin" onclick="subCoins()">Subtract</button>
+                <br>
+                <button type="button" id="transCoin">Transfer</button>
+                To: 
+                <select id="coinTransfer">
+                    <option value="cp">CP</option>
+                    <option value="sp">SP</option>
+                    <option value="ep">EP</option>
+                    <option value="gp">GP</option>
+                    <option value="pp">PP</option>
+                </select>
+                <br>
+                <button type="button" id="largeCoins">Largest Coins</button>
+                <br>
+                <button type="button" id="splitCoin">Split</button>
+                Shares: <input type="number" value="0" min="0">
+                <div id="shareResults"></div>
+
             </div>
-            <div id="money_buttons" float="inline">
-            
-            </div>
-            <div id="money_values" float="inline"></div>
         </div>
 
         <div id="str" class="tabcontent">
             <h3>Strength</h3>
             <div id="strForm">
-                Strength Score: <input type="text" value="10" id="strScore"><br>
+                Strength Score: <input type="number" value="10" id="strScore"><br>
                 Powerful Build: <input type="checkbox" id="powBuild">
                 Small: <input type="checkbox" id="isSmall"><br>
                 <input type="submit" onclick="calculateStr()" value="Calculate">
@@ -41,7 +77,7 @@
         <div id="con" class="tabcontent">
             <h3>Constitution</h3>
              <div id="conForm">
-                Con. Score: <input type="text" value="10" id="conScore"><br>
+                Con. Score: <input type="number" value="10" id="conScore"><br>
                 <input type="submit" onclick="calculateCon()" value="Calculate">
             </div>
             <div id="conResults"></div>
@@ -50,7 +86,7 @@
         <div id="travel" class="tabcontent">
             <h3>Travel</h3>
              <div id="speedForm">
-                Speed per Round: <input type="text" value="30" id="speed"><br>
+                Speed per Round: <input type="number" value="30" id="speed"><br>
                 <input type="submit" onclick="calculateTravel()" value="Calculate">
             </div>
             <div id="travelResults"></div>
