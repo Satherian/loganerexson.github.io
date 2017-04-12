@@ -44,3 +44,10 @@ function calculateStr(){
     var strResults = document.getElementById("strResults");
     strResults.innerHTML = resultString;
 }
+
+function calculateCon(){
+    var con = parseFloat("10");
+
+    var mod = Math.floor((con - 10) / 2);
+    var breath = Math.max(0.5,(1+mod));
+}
