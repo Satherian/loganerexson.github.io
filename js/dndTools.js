@@ -34,20 +34,50 @@ function calculateStr(){
     var highJump = ((3+str)/2);
 
     var resultString = "<h4>Results:</h4><ul>";
-    resultString += "<li>Modifier: "+mod+"</li>";
-    resultString += "<li>Carrying Capacity: "+ capacity+" lb</li>";
-    resultString += "<li>Push/Drag/Lift Limit: "+capacity*2+" lb</li>";
-    resultString += "<li>Long Jump:<ul><li>10-foot-Run: " + longJump + 
-        " ft.</li><li>Standing: " + longJump/2 +" ft.</li></ul></li>";
-    resultString += "<li>High Jump: "+highJump+" ft.</li></ul>";
+    resultString += "<li>Modifier: <b>"+mod+"</b></li>";
+    resultString += "<li>Carrying Capacity: <b>"+ capacity+"</b> lb</li>";
+    resultString += "<li>Push/Drag/Lift Limit: <b>"+capacity*2+"</b> lb</li>";
+    resultString += "<li>Long Jump:<ul><li>10-foot-Run: <b>" + longJump + 
+        "</b> ft.</li><li>Standing: <b>" + longJump/2 +"</b> ft.</li></ul></li>";
+    resultString += "<li>High Jump: <b>"+highJump+"</b> ft.</li></ul>";
 
     var strResults = document.getElementById("strResults");
     strResults.innerHTML = resultString;
 }
 
 function calculateCon(){
-    var con = parseFloat("10");
+    var con = parseFloat(document.getElementById("conScore").value);
 
     var mod = Math.floor((con - 10) / 2);
     var breath = Math.max(0.5,(1+mod));
+
+    var resultString = "<h4>Results:</h4><ul>";
+    resultString += "<li>Modifier: <b>"+mod+"</b></li>";
+    resultString +="<li>You can hold its breath for <b>" + breath + "</b> minutes. When"
+        + " you run out of breath, you survive for <b>" + Math.max(1, mod) 
+        + "</b> rounds. On the next turn, you drop to 0 hit points and are dying</li></ul>";
+
+    var conResults = document.getElementById("conResults");
+    conResults.innerHTML = resultString;
+}
+
+function calculateTravel(){
+    var speed = parseFloat(document.getElementById("speed").value);
+
+    var perMin = speed*10;
+    var perHour = speed/10;
+    var perDay = perHour*8;
+
+    var resultString = "<h4>Results:</h4><ul>";
+    resultString += "<li>Round (6 seconds): <b>" + speed + "</b> ft.</li>";
+    resultString += "<li>1 minute: <b>" + perMin + "</b> ft.</li>";
+    resultString += "<li>1 hour (Normal Pace): <b>" + perHour + "</b> mi.</li>";
+    resultString += "<li>1 hour (Fast Pace): <b>" + (perHour*4)/3 + "</b> mi.</li>";
+    resultString += "<li>1 hour (Slow Pace): <b>" + (perHour*2)/3 + "</b> mi.</li>";
+    resultString += "<li>1 Day (Normal Pace): <b>" + perDay + "</b> mi.</li>";
+    resultString += "<li>1 Day (Fast Pace): <b>" + (perDay*4)/3 + "</b> mi.</li>";
+    resultString += "<li>1 Day (Slow Pace): <b>" + (perDay*2)/3 + "</b> mi.</li>";
+
+    var travelResults = document.getElementById("travelResults");
+    travelResults.innerHTML = resultString;
 }

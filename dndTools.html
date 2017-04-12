@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
     <head>
-        <title>DnD Tools</title>
+        <title>D&ampD Tools</title>
         <script src="js/dndTools.js"></script>
         <link rel="stylesheet" href="css/dndTools.css">
     </head>
@@ -40,12 +40,20 @@
 
         <div id="con" class="tabcontent">
             <h3>Constitution</h3>
-            <p>Tokyo is the capital of Japan.</p>
+             <div id="conForm">
+                Con. Score: <input type="text" value="10" id="conScore"><br>
+                <input type="submit" onclick="calculateCon()" value="Calculate">
+            </div>
+            <div id="conResults"></div>
         </div>
 
         <div id="travel" class="tabcontent">
             <h3>Travel</h3>
-            <p>Tokyo is the capital of Japan.</p>
+             <div id="speedForm">
+                Speed per Round: <input type="text" value="30" id="speed"><br>
+                <input type="submit" onclick="calculateTravel()" value="Calculate">
+            </div>
+            <div id="travelResults"></div>
         </div>
     </body>
 </html>
