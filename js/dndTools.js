@@ -53,7 +53,7 @@ function calculateCon(){
 
     var resultString = "<h4>Results:</h4><ul>";
     resultString += "<li>Modifier: <b>"+mod+"</b></li>";
-    resultString +="<li>You can hold its breath for <b>" + breath + "</b> minutes. When"
+    resultString +="<li>You can hold your breath for <b>" + breath + "</b> minutes. When"
         + " you run out of breath, you survive for <b>" + Math.max(1, mod) 
         + "</b> rounds. On the next turn, you drop to 0 hit points and are dying</li></ul>";
 
